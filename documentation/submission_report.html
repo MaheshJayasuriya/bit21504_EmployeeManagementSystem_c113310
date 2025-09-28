@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment Submission Report - Employee Management System</title>
+  <style>
+    /* A4 portrait styles */
+    @page { size: A4; margin: 20mm }
+    body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 10mm; color: #222 }
+    .page { width: 210mm; min-height: 297mm; padding: 10mm 12mm; box-sizing: border-box }
+    h1 { font-size: 20px; margin-bottom: 6px }
+    h2 { font-size: 14px; margin: 10px 0 }
+    p { margin: 6px 0 }
+    .meta { font-size: 12px; color: #444 }
+    .section { margin-top: 12px; }
+    .screenshots { display: flex; flex-wrap: wrap; gap: 8px }
+    .screenshot { width: calc(50% - 8px); border: 1px solid #ccc; padding: 6px; box-sizing: border-box; background: #fff }
+    .screenshot img { width: 100%; height: auto; display: block }
+    .caption { font-size: 11px; color: #333; margin-top: 6px }
+    pre.sql { background: #f6f8fa; border: 1px solid #e1e4e8; padding: 8px; overflow: auto; font-size: 12px }
+    .footer { font-size: 11px; color: #666; margin-top: 18px }
+    /* Make sure images print well */
+  img { -webkit-print-color-adjust: exact; print-color-adjust: exact }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>BIT21504 - Web Related Frameworks II</h1>
+    <p class="meta">Practical Assignment: Employee Management System — Submission Report</p>
+
+    <h2>Deliverables Coverage</h2>
+    <ol>
+      <li>GitHub Repository containing the full source code.
+        <p class="meta">Location in workspace: project root (contains `backend/` and `frontend/`).</p>
+      </li>
+      <li>Postman Collection (or Swagger) for testing API endpoints.
+        <p class="meta">Swagger is enabled in Development for the ASP.NET Core Web API. See screenshot below.</p>
+      </li>
+      <li>Database SQL Script for creating the Employee table.</li>
+      <li>Screenshots of the working application (Frontend & Backend).</li>
+    </ol>
+
+    <div class="section">
+      <h2>Implemented Features (including bonus)</h2>
+      <ul>
+        <li>Full CRUD API for Employee (GET, POST, PUT, DELETE).</li>
+        <li>Angular frontend with Employee list, Add/Edit form, Delete confirmation dialog.</li>
+        <li>Pagination & search on the employee list (bonus).</li>
+        <li>Angular Material snackbar notifications (bonus).</li>
+        <li>Dockerfile added for both backend and frontend (bonus).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Database SQL Script (insert sample rows)</h2>
+      <p class="meta">A seed SQL script was placed at <code>backend/seed/insert_sri_lankan_employees.sql</code>.</p>
+      <pre class="sql">-- INSERT sample rows (see the file in repository)
+-- Inserted 20 sample Sri Lankan employees (Kamal Perera, Nimal Silva, ... Hashan Fernando)
+</pre>
+    </div>
+
+    <div class="section">
+      <h2>Screenshots</h2>
+      <p class="meta">Screenshots located at: <code>documentation/screenshots/</code></p>
+      <div class="screenshots">
+        <div class="screenshot">
+          <img src="file:///E:/CIDA/2025/00) My stuff/IMBS/01 BIT IMBS/BIT21504 - Web Related Frameworks II/Assisgnment/bit21504_EmployeeManagementSystem_c113310/documentation/screenshots/employee_list.PNG" alt="Employee List">
+          <div class="caption">Employee List (with pagination & search)</div>
+        </div>
+
+        <div class="screenshot">
+          <img src="file:///E:/CIDA/2025/00) My stuff/IMBS/01 BIT IMBS/BIT21504 - Web Related Frameworks II/Assisgnment/bit21504_EmployeeManagementSystem_c113310/documentation/screenshots/add_employee.PNG" alt="Add Employee">
+          <div class="caption">Add Employee form</div>
+        </div>
+
+        <div class="screenshot">
+          <img src="file:///E:/CIDA/2025/00) My stuff/IMBS/01 BIT IMBS/BIT21504 - Web Related Frameworks II/Assisgnment/bit21504_EmployeeManagementSystem_c113310/documentation/screenshots/edit_employee.PNG" alt="Edit Employee">
+          <div class="caption">Edit Employee</div>
+        </div>
+
+        <div class="screenshot">
+          <img src="file:///E:/CIDA/2025/00) My stuff/IMBS/01 BIT IMBS/BIT21504 - Web Related Frameworks II/Assisgnment/bit21504_EmployeeManagementSystem_c113310/documentation/screenshots/delete_employee.PNG" alt="Delete Employee">
+          <div class="caption">Delete confirmation dialog</div>
+        </div>
+
+        <div class="screenshot">
+          <img src="file:///E:/E:\CIDA\2025\00) My stuff/IMBS/01 BIT IMBS/BIT21504 - Web Related Frameworks II/Assisgnment/bit21504_EmployeeManagementSystem_c113310/documentation/screenshots/swagger.PNG" alt="Swagger">
+          <div class="caption">Swagger UI showing API endpoints</div>
+        </div>
+
+        <div class="screenshot">
+          <img src="file:///E:/CIDA/2025/00) My stuff/IMBS/01 BIT IMBS/BIT21504 - Web Related Frameworks II/Assisgnment/bit21504_EmployeeManagementSystem_c113310/documentation/screenshots/codebase_backend.PNG" alt="Backend codebase">
+          <div class="caption">Backend project structure</div>
+        </div>
+
+        <div class="screenshot">
+          <img src="file:///E:/CIDA/2025/00) My stuff/IMBS/01 BIT IMBS/BIT21504 - Web Related Frameworks II/Assisgnment/bit21504_EmployeeManagementSystem_c113310/documentation/screenshots/codebase_frontend.PNG" alt="Frontend codebase">
+          <div class="caption">Frontend project structure</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>How to run (short)</h2>
+      <ol>
+        <li>Backend: open `backend/EmployeeManagementSystem` and run `dotnet run`. By default in Development the API listens on <code>http://localhost:5192</code>.</li>
+        <li>Database: apply migrations (dotnet ef database update) or run the provided SQL script(s) in `backend/seed/` using SSMS.
+        </li>
+        <li>Frontend: open `frontend/employee-management` and run `npm install --legacy-peer-deps` then `ng serve` (or build & serve the `dist/` for production).
+      </ol>
+    </div>
+
+    <div class="section footer">
+      <p>Prepared: September 28, 2025</p>
+      <p>Repository root: project folder containing `backend/` and `frontend/`.</p>
+    </div>
+  </div>
+</body>
+</html>
